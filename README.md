@@ -1,9 +1,9 @@
-# vue-svg
+# vue-svg-directive
 VueJS directive to make using [SVG sprites](https://icomoon.io/app/) much simpler to use.
 
 # Setup
 ```
-import svg from 'vue-svg'
+import svg from 'vue-svg-directive'
 ...
 Vue.use(svg, {
   sprites : '/static/sprites.svg',
