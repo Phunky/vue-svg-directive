@@ -1,6 +1,6 @@
 {
   "name": "vue-svg-directive",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "VueJS directive to make using SVG sprites simpler",
   "main": "index.js",
   "scripts": {
