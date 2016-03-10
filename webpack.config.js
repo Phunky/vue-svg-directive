@@ -4,7 +4,8 @@ module.exports = {
   entry: './index.js',
   output: {
     path       : './dist',
-    filename   : 'vue-svg-directive.js'
+    filename   : 'vue-svg-directive.js',
+    libraryTarget: "umd"
   },
   module: {
     loaders: [

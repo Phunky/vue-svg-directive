@@ -1,5 +1,5 @@
 export default {
-  install (Vue) {
+  install (Vue, opts) {
     Vue.directive('svg', {
       params: ['sprite'],
 
