@@ -4,7 +4,7 @@
   "description": "VueJS directive to make using SVG sprites simpler",
   "main": "dist/vue-svg-directive.js",
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "dist": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "keywords": [
     "vuej",
