@@ -4,32 +4,34 @@ export default {
       params: ['sprite'],
 
       bind () {
+        if(!opts.prefix) {
+          opts.prefix = '';
+        }
+
         let svg    = document.createElementNS('http://www.w3.org/2000/svg', 'svg'),
             use    = document.createElementNS('http://www.w3.org/2000/svg', 'use'),
             sprite = `${opts.prefix}${this.params.sprite}`,
             scope  = null,
-            el     = this.el
-
+            el     = this.el;
 
         for (let key in el.attributes) {
-          let attr = el.attributes[key].name
-          if( typeof attr === 'string' && attr.substr(0,2) === '_v' ) scope = attr
+          let attr = el.attributes[key].name;
+          if( typeof attr === 'string' && attr.substr(0,2) === '_v' ) scope = attr;
         }
 
-        use.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', `${opts.sprites}#${sprite}`)
-        use.setAttributeNS(null, scope, '')
+        use.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', `${opts.sprites}#${sprite}`);
+        use.setAttributeNS(null, scope, '');
 
-        if( el.tagName !== 'svg' ) {
-          svg.setAttributeNS(null, scope, '')
-          svg.classList.add(opts.class, sprite)
-          el.appendChild(svg)
+        if (el.tagName !== 'svg') {
+          svg.setAttributeNS(null, scope, '');
+          if (opts.class) svg.classList.add(opts.class, sprite);
+          el.appendChild(svg);
           el = svg;
         }
 
-        el.classList.add(opts.class, sprite)
-        el.appendChild(use)
-      },
-
+        if (opts.class) el.classList.add(opts.class, sprite);
+        el.appendChild(use);
+      }
     })
   }
 }
