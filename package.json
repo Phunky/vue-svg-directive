@@ -3,11 +3,12 @@
   "version": "0.0.6",
   "description": "VueJS directive to make using SVG sprites simpler",
   "main": "dist/vue-svg-directive.js",
+  "homepage": "https://github.com/Phunky/vue-svg-directive",
   "scripts": {
     "dist": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "keywords": [
-    "vuej",
+    "vuejs",
     "svg",
     "sprite"
   ],
