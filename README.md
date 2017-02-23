@@ -16,11 +16,15 @@ Vue.use(svg, {
 The below will insert an ```<svg />``` within it's parent element
 
 ```html
-<div v-svg sprite="home"></div>
+<div v-svg="'home'"></div>
+<!-- or, when the sprite name is a prop or a datum -->
+<div v-svg="icon"></div>
 ```
 
 While the below will just add the appropriate `<use>` into the `<svg>`
 
 ```html
-<svg v-svg sprite="home"></svg>
+<svg v-svg="'home'"></svg>
+<!-- or, when the sprite name is a prop or a datum -->
+<svg v-svg="icon"></svg>
 ```
