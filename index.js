@@ -1,18 +1,19 @@
 export default {
     install(Vue, opts) {
         Vue.directive('svg', {
-            params: ['sprite'],
+            bind(el, { value }) {
+                if (!value) {
+                    return;
+                }
 
-            bind() {
                 if (!opts.prefix) {
                     opts.prefix = '';
                 }
 
                 let svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
                 let use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
-                let sprite = `${opts.prefix}${this.params.sprite}`;
+                let sprite = `${opts.prefix}${value}`;
                 let scope = null;
-                let el = this.el;
 
                 for (let key in el.attributes) {
                     let attr = el.attributes[key].name;
